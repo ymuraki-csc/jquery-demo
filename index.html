@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
+    <title>My Website</title>
+
+    <script defer>
+      // Fetch the request parameter "newContent"
+      const urlParams = new URLSearchParams(window.location.search);
+      const newContent = urlParams.get("content");
+
+      document.addEventListener('DOMContentLoaded', () => {
+
+          // Using jQuery's html() function
+          $("#div1").html(newContent);
+
+          // Using JavaScript's innerHTML property
+          document.querySelector("#div2").innerHTML = newContent;
+      });
+    </script>
+  </head>
+  <body>
+    <h1>jQuery CVE-2020-11023 デモサイト</h1>
+    <p>クエリ文字列のcontentに指定した値が表示されます</p>
+    <div id="div1">Original content of div1</div>
+    <div id="div2">Original content of div2</div>
+  </body>
+</html>
